@@ -205,7 +205,7 @@ footer .profile .profileInfo p {
         align-items: center;
         opacity: 1;
         position: absolute;
-        top: 86%;
+        top: 87%;
         left: 0%;
         transition: opacity 250ms ease;
         border-top-left-radius: 0;
@@ -238,5 +238,13 @@ footer .profile .profileInfo p {
     }
     .closeShare svg path {
         fill: #fff;
+    }
+}
+
+
+@media only screen and (max-width: 375px) {
+    .toolTip.active {
+        top: 86%;
+        left: 0%;
     }
 }
