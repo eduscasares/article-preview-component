@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+:root {
+    --primary-font: 'Manrope', sans-serif;
+    --primary-color: hsl(217, 19%, 35%); 
+    --secondary-color: hsl(214, 17%, 51%);
+    --third-color: hsl(212, 23%, 69%);
+    --fourth-color: hsl(210, 46%, 95%);
+}
+
+body { 
+    font-family: var(--primary-font);
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    background-color: var(--fourth-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+p {
+    font-size: 12px;
+    line-height: 1.7em;
+    color: var(--secondary-color);
+}
+
+.card {
+    display: flex;
+    max-width: 730px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    /* overflow: hidden; */
+    box-shadow: 0 10px 60px -30px rgba(72, 85, 106, 0.5);
+}
+
+.card img.featuredImage {
+    object-fit: cover;
+    height: 100%;
+    width: 285px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+article {
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+article .profile {
+    display: flex;
+}
+
+footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+footer .profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin-right: 25px;
+}
+
+footer .profile .author p:first-child {
+    color:hsl(217, 19%, 35%);
+    font-weight: bold;
+}
+
+footer .profile .author p:nth-child(2) {
+    color: var(--third-color);
+}
+
+footer .share {
+    width: 30px;
+    height: 30px;
+    background: var(--fourth-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 250ms ease;
+}
+
+footer .share:hover {
+    background-color: var(--primary-color);
+}
+
+footer .share svg {
+    transform: translateY(-7%);
+    transition: all 250ms ease;
+}
+
+footer .share:hover svg path {
+    fill: #fff !important;
+}
+
+footer .profile .profileInfo p {
+    margin: 0;
+}
+
+.toolTip {
+    display: none;
+    height: 0%;
+    opacity: 0;
+    background-color: var(--primary-color);
+    transform: translate(41%, -120%);
+    border-radius: 7px;
+    padding: 5px 25px;
+    transition: opacity 250ms ease-in-out;
+    z-index: 100;
+}
+
+.toolTip::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    transform: rotate(45deg);
+    border-radius: 5px;
+    border-top-left-radius: 35px;
+    position: absolute;
+    top: 60%;
+    right: 41%;
+    z-index: 10;
+}
+
+.contentShare {
+    display: flex;
+    align-items: center;
+}
+
+.toolTip svg {
+    margin: 0 10px;
+}
+
+.toolTip.active {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: opacity 250ms ease;
+}
+
+.toolTip.active p {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-right: 5px;
+}
+
+.closeShare {
+    display: none;
+}
+
+@media only screen and (max-width: 375px) {
+    .card {
+        flex-direction: column;
+        margin: 20px;
+        position: relative;
+    }
+    .card img.featuredImage {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+        width: 100%;
+    }
+    h1 {
+        font-size: 16px;
+    }
+    footer {
+        margin-top: 35px;
+        position: inherit;
+    }
+    .toolTip {
+        display: none;
+        height: 0%;
+        transform: translate(0%, 0%);
+        opacity: 0;
+        background-color: var(--primary-color);
+        border-radius: 7px;
+        padding: 5px 25px;
+        transition: opacity 250ms ease-in-out;
+        z-index: 100;
+    }
+    .toolTip.active {
+        height: 68px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        opacity: 1;
+        position: absolute;
+        top: 86%;
+        left: 0%;
+        transition: opacity 250ms ease;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+
+    }
+    .toolTip::after {
+        display: none;
+    }
+    .contentShare {
+        display: flex;
+        align-items: center;
+    }
+    .closeShare {
+        display: block; 
+        width: 30px;
+        height: 30px;
+        background: var(--third-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 250ms ease;
+    }
+    .closeShare svg {
+        margin: 0;
+    }
+    .closeShare svg path {
+        fill: #fff;
+    }
+}
