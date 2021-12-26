@@ -168,7 +168,7 @@ footer .profile .profileInfo p {
     display: none;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 525px) {
     .card {
         flex-direction: column;
         margin: 20px;
